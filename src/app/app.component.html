@@ -1,0 +1,31 @@
+<div class="app">
+  <div class="wrapper-content">
+    <header class="header">
+        header
+    </header>
+  </div>
+
+  <div class="wrapper-content">
+    <div class="side-bar">
+      search
+      <input type="text" #searchInput />
+    </div>
+    <div class="content">
+      <ul *ngIf="items.length">
+        <li *ngFor="let item of items">
+          <strong>{{item.name}}</strong><br />
+          <small>{{truncate(item.description)}}</small><br />
+          {{item.stargazers_count}} &#11088;<br />
+        </li>
+      </ul>
+      <span *ngIf="!items.length">loading...</span>
+    </div>
+  </div>
+
+  <div class="wrapper-content">
+    <footer>
+      footer
+    </footer>
+  </div>
+</div>
+
